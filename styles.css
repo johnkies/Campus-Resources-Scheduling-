@@ -1,0 +1,28 @@
+/* Custom styles to complement Bootstrap */
+body {
+    background-color: #f8fafc;
+}
+
+/* Custom notification button styling */
+.notification-btn:hover {
+    background-color: #f8f9fa !important;
+}
+
+/* Resource card hover effect */
+.resource-card {
+    transition: transform 0.2s ease-in-out;
+}
+
+.resource-card:hover {
+    transform: translateY(-2px);
+}
+
+/* Filter dropdown styling */
+.filter-dropdown {
+    min-width: 120px;
+}
+
+/* Custom spacing for resource features */
+.card-text.text-muted {
+    margin-bottom: 0.75rem !important;
+}

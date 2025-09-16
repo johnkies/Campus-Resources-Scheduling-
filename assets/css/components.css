@@ -1,0 +1,159 @@
+/* Component-specific styles */
+
+/* Navigation */
+.navbar-custom {
+    box-shadow: var(--box-shadow-sm);
+}
+
+.notification-btn:hover {
+    background-color: var(--light-color) !important;
+    transform: scale(1.05);
+}
+
+/* Page Transitions */
+.page-content {
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Schedule Table */
+.schedule-cell:hover {
+    background-color: var(--primary-color);
+    opacity: 0.1;
+}
+
+.table th {
+    border-top: none;
+    font-weight: 600;
+}
+
+/* Booking Cards */
+.booking-card {
+    transition: var(--transition);
+}
+
+.booking-card:hover {
+    transform: translateX(5px);
+}
+
+/* Stats Cards */
+.stats-card {
+    transition: var(--transition);
+    border: none;
+    box-shadow: var(--box-shadow);
+}
+
+.stats-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--box-shadow-lg);
+}
+
+.stats-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: var(--border-radius-lg);
+}
+
+/* Resource Cards */
+.resource-card {
+    transition: var(--transition);
+    border: 1px solid #dee2e6;
+}
+
+.resource-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--box-shadow-lg);
+    border-color: var(--primary-color);
+}
+
+.resource-badge {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem;
+}
+
+.resource-features {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.resource-feature {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    font-size: 0.875rem;
+    color: var(--secondary-color);
+}
+
+/* Quick Book Form */
+.quick-book-card {
+    position: sticky;
+    top: 100px;
+}
+
+.form-floating-custom {
+    position: relative;
+}
+
+/* Filter Dropdown */
+.filter-dropdown {
+    min-width: 140px;
+    border: 1px solid #dee2e6;
+}
+
+.filter-dropdown:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+}
+
+/* Loading States */
+.btn-loading {
+    position: relative;
+    pointer-events: none;
+}
+
+.btn-loading::after {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: 50%;
+    left: 50%;
+    margin-left: -8px;
+    margin-top: -8px;
+    border: 2px solid transparent;
+    border-top-color: currentColor;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .stats-card {
+        margin-bottom: 1rem;
+    }
+    
+    .resource-card {
+        margin-bottom: 1rem;
+    }
+    
+    .quick-book-card {
+        position: static;
+        margin-top: 2rem;
+    }
+}

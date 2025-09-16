@@ -1,0 +1,46 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+body {
+  margin: 0;
+  background-color: #f8f9fa;
+}
+
+.stats-card {
+  transition: transform 0.2s ease-in-out;
+}
+
+.stats-card:hover {
+  transform: translateY(-2px);
+}
+
+.resource-card {
+  transition: all 0.2s ease-in-out;
+}
+
+.resource-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+
+.nav-link.btn {
+  border: none;
+  background: none;
+}
+
+.nav-link.btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.nav-link.btn.active {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.resource-feature {
+  display: inline-block;
+  margin-right: 0.5rem;
+  margin-bottom: 0.25rem;
+}

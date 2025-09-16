@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Scheduler - React</title>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+</body>
+</html>
+                
+                <div class="d-flex align-items-center">
+                    <button class="btn btn-outline-secondary me-3 position-relative notification-btn">
+                        <i class="bi bi-bell"></i>
+                    </button>
+                    <div class="dropdown">
+                        <button class="btn btn-link text-decoration-none d-flex align-items-center" type="button" data-bs-toggle="dropdown">
+                            <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-2" style="width: 40px; height: 40px;">
+                                <span class="fw-semibold">AD</span>
+                            </div>
+                            <span class="text-dark d-none d-md-inline">ADMIN</span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Profile</a></li>
+                            <li><a class="dropdown-item" href="#">Settings</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Logout</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container-fluid py-4">
+        <!-- Dashboard Page -->
+        <div id="dashboard-page" class="page-content">
+            <!-- Stats Cards -->
+            <div class="row g-4 mb-4">
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="card border-0 shadow-sm h-100 stats-card">
+                        <div class="card-body d-flex align-items-center">
+                            <div class="flex-grow-1">
+                                <h6 class="card-subtitle mb-2 text-muted">Total Resources</h6>
+                                <h2 class="card-title mb-0 fw-bold">4</h2>
+                            </div>
+                            <div class="bg-primary bg-opacity-10 rounded-3 p-3 stats-icon">
+                                <i class="bi bi-grid-3x3-gap text-primary fs-4"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="card border-0 shadow-sm h-100 stats-card">
+                        <div class="card-body d-flex align-items-center">
+                            <div class="flex-grow-1">
+                                <h6 class="card-subtitle mb-2 text-muted">Available Now</h6>
+                                <h2 class="card-title mb-0 fw-bold text-success">4</h2>
+                            </div>
+                            <div class="bg-success bg-opacity-10 rounded-3 p-3 stats-icon">
+                                <i class="bi bi-check-circle text-success fs-4"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="card border-0 shadow-sm h-100 stats-card">
+                        <div class="card-body d-flex align-items-center">
+                            <div class="flex-grow-1">
+                                <h6 class="card-subtitle mb-2 text-muted">Currently Booked</h6>
+                                <h2 class="card-title mb-0 fw-bold text-danger">0</h2>
+                            </div>
+                            <div class="bg-danger bg-opacity-10 rounded-3 p-3 stats-icon">
+                                <i class="bi bi-calendar-check text-danger fs-4"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="card border-0 shadow-sm h-100 stats-card">
+                        <div class="card-body d-flex align-items-center">
+                            <div class="flex-grow-1">
+                                <h6 class="card-subtitle mb-2 text-muted">My Bookings</h6>
+                                <h2 class="card-title mb-0 fw-bold">0</h2>
+                            </div>
+                            <div class="bg-primary bg-opacity-10 rounded-3 p-3 stats-icon">
+                                <i class="bi bi-calendar-event text-primary fs-4"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Content Grid -->
+            <div class="row g-4">
+                <!-- Available Resources -->
+                <div class="col-lg-8">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-header bg-white border-0 d-flex justify-content-between align-items-center py-3">
+                            <h5 class="card-title mb-0 fw-semibold">Available Resources</h5>
+                            <div class="d-flex gap-2">
+                                <select class="form-select form-select-sm filter-dropdown" style="width: auto;">
+                                    <!-- Dynamic filter options will be rendered here -->
+                                </select>
+                                <button class="btn btn-primary btn-sm">
+                                    <i class="bi bi-plus-lg me-1"></i>
+                                    Book Resource
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="row g-3 resources-container">
+                                <!-- Dynamic resources will be loaded here by ResourceManager -->
+                                <div class="col-md-6">
+                                    <div class="card resource-card border" data-resource-id="lab-1">
+                                        <div class="card-body">
+                                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                                <h6 class="card-title mb-0 fw-semibold">Lab 1</h6>
+                                                <span class="badge bg-success resource-badge">Available</span>
+                                            </div>
+                                            <p class="card-text text-muted small mb-3">
+                                                Lab • Capacity: 60
+                                            </p>
+                                            <div class="resource-features mb-3">
+                                                <small class="text-muted resource-feature">
+                                                    <i class="bi bi-people me-1"></i>60
+                                                </small>
+                                                <small class="text-muted resource-feature">
+                                                    <i class="bi bi-projector me-1"></i>projector
+                                                </small>
+                                                <small class="text-muted resource-feature">
+                                                    <i class="bi bi-wifi me-1"></i>wifi
+                                                </small>
+                                                <small class="text-muted resource-feature">
+                                                    <i class="bi bi-easel me-1"></i>whiteboard
+                                                </small>
+                                            </div>
+                                            <button class="btn btn-outline-primary btn-sm w-100 book-btn" 
+                                                    data-resource-name="Lab 1">
+                                                Book Now
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="card resource-card border" data-resource-id="lab-2">
+                                        <div class="card-body">
+                                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                                <h6 class="card-title mb-0 fw-semibold">Lab 2</h6>
+                                                <span class="badge bg-success resource-badge">Available</span>
+                                            </div>
+                                            <p class="card-text text-muted small mb-3">
+                                                Lab • Capacity: 60
+                                            </p>
+                                            <div class="resource-features mb-3">
+                                                <small class="text-muted resource-feature">
+                                                    <i class="bi bi-people me-1"></i>60
+                                                </small>
+                                                <small class="text-muted resource-feature">
+                                                    <i class="bi bi-pc-display me-1"></i>computers
+                                                </small>
+                                                <small class="text-muted resource-feature">
+                                                    <i class="bi bi-wifi me-1"></i>wifi
+                                                </small>
+                                                <small class="text-muted resource-feature">
+                                                    <i class="bi bi-printer me-1"></i>printer
+                                                </small>
+                                            </div>
+                                            <button class="btn btn-outline-primary btn-sm w-100 book-btn" 
+                                                    data-resource-name="Lab 2">
+                                                Book Now
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="card resource-card border" data-resource-id="lab-3">
+                                        <div class="card-body">
+                                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                                <h6 class="card-title mb-0 fw-semibold">Lab 3</h6>
+                                                <span class="badge bg-success resource-badge">Available</span>
+                                            </div>
+                                            <p class="card-text text-muted small mb-3">
+                                                Lab • Capacity: 60
+                                            </p>
+                                            <div class="resource-features mb-3">
+                                                <small class="text-muted resource-feature">
+                                                    <i class="bi bi-people me-1"></i>60
+                                                </small>
+                                                <small class="text-muted resource-feature">
+                                                    <i class="bi bi-volume-up me-1"></i>sound
+                                                </small>
+                                                <small class="text-muted resource-feature">
+                                                    <i class="bi bi-projector me-1"></i>projector
+                                                </small>
+                                                <small class="text-muted resource-feature">
+                                                    <i class="bi bi-mic me-1"></i>microphone
+                                                </small>
+                                            </div>
+                                            <button class="btn btn-outline-primary btn-sm w-100 book-btn" 
+                                                    data-resource-name="Lab 3">
+                                                Book Now
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="card resource-card border" data-resource-id="lab-4-in-1">
+                                        <div class="card-body">
+                                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                                <h6 class="card-title mb-0 fw-semibold">Lab 4 in 1</h6>
+                                                <span class="badge bg-success resource-badge">Available</span>
+                                            </div>
+                                            <p class="card-text text-muted small mb-3">
+                                                Lab • Capacity: 60
+                                            </p>
+                                            <div class="resource-features mb-3">
+                                                <small class="text-muted resource-feature">
+                                                    <i class="bi bi-people me-1"></i>60
+                                                </small>
+                                                <small class="text-muted resource-feature">
+                                                    <i class="bi bi-tv me-1"></i>tv
+                                                </small>
+                                                <small class="text-muted resource-feature">
+                                                    <i class="bi bi-wifi me-1"></i>wifi
+                                                </small>
+                                                <small class="text-muted resource-feature">
+                                                    <i class="bi bi-telephone me-1"></i>conference-phone
+                                                </small>
+                                            </div>
+                                            <button class="btn btn-outline-primary btn-sm w-100 book-btn" 
+                                                    data-resource-name="Lab 4 in 1">
+                                                Book Now
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Book Form -->
+                <div class="col-lg-4">
+                    <div class="card border-0 shadow-sm quick-book-card">
+                        <div class="card-header bg-white border-0 py-3">
+                            <h5 class="card-title mb-0 fw-semibold">Quick Book Resource</h5>
+                        </div>
+                        <div class="card-body">
+                            <form class="quick-book-form">
+                                <div class="mb-3">
+                                    <label for="name" class="form-label">Your Name</label>
+                                    <input type="text" class="form-control" id="name" placeholder="Enter your full name">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="resource" class="form-label">Resource</label>
+                                    <select class="form-select" id="resource">
+                                        <option>Select a resource</option>
+                                        <option>Lab 1</option>
+                                        <option>Lab 2</option>
+                                        <option>Lab 3</option>
+                                        <option>Lab 4 in 1</option>
+                                    </select>
+                                </div>
+                                <div class="row g-2 mb-3">
+                                    <div class="col-6">
+                                        <label for="date" class="form-label">Date</label>
+                                        <input type="date" class="form-control" id="date" value="2025-09-16">
+                                    </div>
+                                    <div class="col-6">
+                                        <label for="duration" class="form-label">Duration</label>
+                                        <select class="form-select" id="duration">
+                                            <option>1 hour</option>
+                                            <option>2 hours</option>
+                                            <option>3 hours</option>
+                                            <option>4 hours</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn-primary w-100">Book Resource</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Resources Page -->
+        <div id="resources-page" class="page-content d-none">
+            <div class="row mb-4">
+                <div class="col">
+                    <h2 class="fw-bold mb-3">Resource Management</h2>
+                    <p class="text-muted">Manage and view all campus resources</p>
+                </div>
+            </div>
+            
+            <div class="row g-3 mb-4">
+                <!-- Dynamic stats cards will be rendered here -->
+            </div>
+
+            <div class="card border-0 shadow-sm">
+                <div class="card-header bg-white border-0 py-3">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h5 class="card-title mb-0 fw-semibold">All Resources</h5>
+                        <div class="d-flex gap-2">
+                            <select class="form-select form-select-sm resources-filter" style="width: auto;">
+                                <!-- Dynamic filter options will be rendered here -->
+                            </select>
+                            <button class="btn btn-success btn-sm">
+                                <i class="bi bi-plus-lg me-1"></i>
+                                Add Resource
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="row g-3 all-resources-container">
+                        <!-- All resources will be loaded here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- My Bookings Page -->
+        <div id="my-bookings-page" class="page-content d-none">
+            <div class="row mb-4">
+                <div class="col">
+                    <h2 class="fw-bold mb-3">My Bookings</h2>
+                    <p class="text-muted">View and manage your resource bookings</p>
+                </div>
+            </div>
+
+            <div class="row g-4 mb-4">
+                <div class="col-md-4">
+                    <div class="card border-0 shadow-sm text-center">
+                        <div class="card-body">
+                            <i class="bi bi-calendar-check fs-1 text-success mb-3"></i>
+                            <h5>Active Bookings</h5>
+                            <h3 class="text-success mb-0" id="active-bookings-count">0</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card border-0 shadow-sm text-center">
+                        <div class="card-body">
+                            <i class="bi bi-clock-history fs-1 text-warning mb-3"></i>
+                            <h5>Upcoming</h5>
+                            <h3 class="text-warning mb-0" id="upcoming-bookings-count">0</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card border-0 shadow-sm text-center">
+                        <div class="card-body">
+                            <i class="bi bi-check-circle fs-1 text-info mb-3"></i>
+                            <h5>Completed</h5>
+                            <h3 class="text-info mb-0" id="completed-bookings-count">0</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card border-0 shadow-sm">
+                <div class="card-header bg-white border-0 py-3">
+                    <h5 class="card-title mb-0 fw-semibold">Booking History</h5>
+                </div>
+                <div class="card-body">
+                    <div id="bookings-list">
+                        <!-- Bookings will be loaded here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Schedule Page -->
+        <div id="schedule-page" class="page-content d-none">
+            <div class="row mb-4">
+                <div class="col">
+                    <h2 class="fw-bold mb-3">Schedule Overview</h2>
+                    <p class="text-muted">View resource availability and bookings calendar</p>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-8">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-header bg-white border-0 py-3">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <h5 class="card-title mb-0 fw-semibold">Weekly Schedule</h5>
+                                <div class="d-flex gap-2">
+                                    <button class="btn btn-outline-secondary btn-sm" id="prev-week">
+                                        <i class="bi bi-chevron-left"></i>
+                                    </button>
+                                    <span class="align-self-center mx-2" id="current-week">This Week</span>
+                                    <button class="btn btn-outline-secondary btn-sm" id="next-week">
+                                        <i class="bi bi-chevron-right"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div id="schedule-calendar">
+                                <!-- Calendar will be rendered here -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-header bg-white border-0 py-3">
+                            <h5 class="card-title mb-0 fw-semibold">Today's Schedule</h5>
+                        </div>
+                        <div class="card-body">
+                            <div id="today-schedule">
+                                <!-- Today's bookings will be shown here -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Application JS (ES6 Modules) -->
+    <script type="module" src="assets/js/app.js"></script>
+</body>
+</html>
